@@ -144,7 +144,6 @@ if __name__ == "__main__":
         # obtain audio from the microphone
         # tried sphinx but not so good
         # used recognize_google insted of recognize_sphinx
-        # recognize speech using Sphinx
      r = sr.Recognizer()
      try:
         with sr.Microphone() as source:
