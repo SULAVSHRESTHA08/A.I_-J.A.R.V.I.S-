@@ -41,34 +41,34 @@ model = genai.GenerativeModel(
 )
 )
 
-def speak_old(text):# this function speaks the text 
+def speak(text):# this function speaks the text 
     engine = pyttsx3.init() # Initilize pyttsx module
     print(f"{text}")
     # engine.say("hello sir")
     engine.say(text) # Queues the text you want the speech engine to say.
     engine.runAndWait()#  Tells the engine to process and speak everything that was queued
 
-def speak(text):
-  tts = gTTS(text)
-  tts.save("temp.mp3")
+# def speak(text):
+#   tts = gTTS(text)
+#   tts.save("temp.mp3")
 
   
-  # Initialize pygame mixer
-  pygame.init()
-  pygame.mixer.init()
+#   # Initialize pygame mixer
+#   pygame.init()
+#   pygame.mixer.init()
 
-  # Load your MP3 file
-  pygame.mixer.music.load("temp.mp3")  # Replace with your file path
+#   # Load your MP3 file
+#   pygame.mixer.music.load("temp.mp3")  # Replace with your file path
 
-  # Play the music
-  pygame.mixer.music.play()
+#   # Play the music
+#   pygame.mixer.music.play()
 
-  # Optional: Keep the script alive while the music plays
-  while pygame.mixer.music.get_busy():
-      time.sleep(1)
+#   # Optional: Keep the script alive while the music plays
+#   while pygame.mixer.music.get_busy():
+#       time.sleep(1)
      
-  pygame.mixer.music.unload()    
-  os.remove("temp.mp3") 
+#   pygame.mixer.music.unload()    
+#   os.remove("temp.mp3") 
 def ask_gemini(c): # handel the request of the user input
     try:
         response = model.generate_content(c) # process the user input to the model 
